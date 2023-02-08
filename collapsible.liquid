@@ -1,3 +1,4 @@
+// Simple
 <div class="faq__Data">
 <button is="toggle-button" class="collapsible-toggle text--strong" aria-controls="faq-11" aria-expanded="false" itemprop="name">
   {{ block.settings.titlefs1  }}
@@ -9,6 +10,25 @@
 <collapsible-content id="faq-11" class="collapsible anchor" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer" {{ block.shopify_attributes }}>
   <div class="collapsible__content text-container" itemprop="text">
     {{ block.settings.answerfs1 }}
+  </div>
+</collapsible-content> 
+</div>
+// Custom filter with save and reset
+<div class="product-facet__filter-item filter.p.m.custom.genderss">
+<button is="toggle-button" class="collapsible-toggle text--strong" aria-controls="faq-11" aria-expanded="false" itemprop="name">
+  {{ block.settings.titlefs1  }}
+<span class="SVG__icon">
+  <svg xmlns="http://www.w3.org/2000/svg" width="8.469" height="15.768" viewBox="0 0 8.469 15.768"><path id="Icon_metro-chevron-thin-right" data-name="Icon metro-chevron-thin-right" d="M18.442,11.585l-6.573-6.8a.637.637,0,0,1,0-.9.629.629,0,0,1,.892,0l7.207,7.25a.637.637,0,0,1,0,.9l-7.207,7.25a.628.628,0,0,1-.892,0,.637.637,0,0,1,0-.9l6.573-6.8Z" transform="translate(-11.683 -3.7)" fill="#4d4d4d"/></svg>
+  </span>
+</button>
+
+<collapsible-content id="faq-11" class="collapsible anchor" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer" {{ block.shopify_attributes }}>
+  <div class="collapsible__content text-container" itemprop="text">
+    {{ block.settings.answerfs1 }}
+  </div>
+  <div class="filter-apply-wrap">
+    <button type="button" data-action="clear-filters"  class="filter-apply-item reset">Reset</button>
+    <button type="button" data-filter-submit class="filter-apply-item apply">Save</button>
   </div>
 </collapsible-content> 
 </div>
