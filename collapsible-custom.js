@@ -1,12 +1,15 @@
 // Focal 9.0 
 // both simple and rerender dom
-// =============Simple=========
+
+// ==========Simple Collapsible=========
 {
   
   const mobileNavLink = document.querySelectorAll('.mobile-nav__link');
 
   const toggleButtons = document.querySelectorAll('body .collapsible-toggle');
 
+  const filterApply = document.querySelectorAll('.filter-apply-item.apply');
+  
   function toggleCollapsible(event) {
     event.stopPropagation();
 
@@ -35,8 +38,29 @@
 
     }, 500);
   }
+  // ==========On Save Collapsible=========
 
+  function saveToggleCollapsible() {
+    let parent = this.parentNode;
+    let collapsible = parent.parentNode;
+    let isExpanded = collapsible.classList.contains("cus-active");
+    let toggleButton = collapsible.previousElementSibling;
+
+    if (isExpanded) {
+      collapsible.classList.add("cus-active");
+      toggleButton.classList.remove("cus-active");
+      collapsible.style.height = 0;
+      setTimeout(function () {
+        collapsible.style.overflow = "hidden";
+      }, 500);
+      toggleButton.setAttribute('aria-expanded', false);
+    }
+
+  }
   
+  filterApply.forEach((button) => {
+    button.addEventListener('click', saveToggleCollapsible);
+  });
 
   mobileNavLink.forEach((button) => {
     button.addEventListener('click', toggleCollapsible);
@@ -46,7 +70,8 @@
     button.addEventListener('click', toggleCollapsible);
   });
 }
-// =============Mutation Observer=========
+// ==========Mutation Observer Collapsible=========
+// Don't add event listners to outside target observer
 {
   let targetElement = document.getElementById("facet-filters");
   if (targetElement) {
@@ -58,10 +83,9 @@
           if (mutation.addedNodes.length) {
             mutation.addedNodes.forEach(node => {
               console.log("dom changed");
-              const mobileNavLink = document.querySelectorAll('.mobile-nav__link');
-
               const toggleButtons = document.querySelectorAll('body .collapsible-toggle');
-        
+              const filterApply = document.querySelectorAll('.filter-apply-item.apply');
+
               function toggleCollapsible(event) {
                 event.stopPropagation();
         
@@ -89,9 +113,26 @@
         
                 }, 500);
               }
-        
-              mobileNavLink.forEach((button) => {
-                button.addEventListener('click', toggleCollapsible);
+              function saveToggleCollapsible() {
+                let parent = this.parentNode;
+                let collapsible = parent.parentNode;
+                let isExpanded = collapsible.classList.contains("cus-active");
+                let toggleButton = collapsible.previousElementSibling;
+
+                if (isExpanded) {
+                  collapsible.classList.add("cus-active");
+                  toggleButton.classList.remove("cus-active");
+                  collapsible.style.height = 0;
+                  setTimeout(function () {
+                    collapsible.style.overflow = "hidden";
+                  }, 500);
+                  toggleButton.setAttribute('aria-expanded', false);
+                }
+
+              }
+              
+              filterApply.forEach((button) => {
+                button.addEventListener('click', saveToggleCollapsible);
               });
         
               toggleButtons.forEach((button) => {
