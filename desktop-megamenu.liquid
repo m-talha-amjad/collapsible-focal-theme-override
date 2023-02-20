@@ -1,0 +1,258 @@
+<desktop-navigation>
+  <ul class="header__linklist list--unstyled hidden-pocket hidden-lap" role="list">
+    {%- for block in section.blocks -%}
+      {%- case block.type -%}
+        {%- when 'mega_menu_1' -%}
+
+          <li class="header__linklist-item">
+            <a class="header__linklist-link link--animated {% if block.settings.show_mega_menu %}dropdown{% endif %}" href="{{ block.settings.menu_item_link }}">
+              {{ block.settings.menu_item_text }} 
+            </a>
+
+            {% if block.settings.show_mega_menu %}
+              <div class="dropdown__menu">
+                <div class="container-full">
+                  <div class="row">
+                    {% if block.settings.half_left_title != blank %}
+                      <div class="halfleft col">
+                        <div class="row">
+                            <div class="col -nav-subtitle-">
+                                <h3>{{ block.settings.half_left_title }}</h3>
+                            </div>
+                        </div>
+                        <div class="row">
+                          {% if block.settings.link_url1 %}
+                            <div class="col-lg-4 -nav-submenu-item-">
+                              <a href="{{ block.settings.link_url1 }}">
+                                  <h4>{{ block.settings.link_text1 }}</h4>
+                                  <p>{{ block.settings.link_info1 }}</p>
+                              </a>
+                            </div>
+                          {% endif %}{% if block.settings.link_url2 %}
+                            <div class="col-lg-4 -nav-submenu-item-">
+                              <a href="{{ block.settings.link_url2 }}">
+                                  <h4>{{ block.settings.link_text2 }}</h4>
+                                  <p>{{ block.settings.link_info2 }}</p>
+                              </a>
+                            </div>
+                          {% endif %}{% if block.settings.link_url3 %}
+                            <div class="col-lg-4 -nav-submenu-item-">
+                              <a href="{{ block.settings.link_url3 }}">
+                                  <h4>{{ block.settings.link_text3 }}</h4>
+                                  <p>{{ block.settings.link_info3 }}</p>
+                              </a>
+                            </div>
+                          {% endif %}{% if block.settings.link_url4 %}
+                            <div class="col-lg-4 -nav-submenu-item-">
+                              <a href="{{ block.settings.link_url4 }}">
+                                  <h4>{{ block.settings.link_text4 }}</h4>
+                                  <p>{{ block.settings.link_info4 }}</p>
+                              </a>
+                            </div>
+                          {% endif %}{% if block.settings.link_url5 %}
+                            <div class="col-lg-4 -nav-submenu-item-">
+                              <a href="{{ block.settings.link_url5 }}">
+                                  <h4>{{ block.settings.link_text5 }}</h4>
+                                  <p>{{ block.settings.link_info5 }}</p>
+                              </a>
+                            </div>
+                          {% endif %}{% if block.settings.link_url6 %}
+                            <div class="col-lg-4 -nav-submenu-item-">
+                              <a href="{{ block.settings.link_url6 }}">
+                                  <h4>{{ block.settings.link_text6 }}</h4>
+                                  <p>{{ block.settings.link_info6 }}</p>
+                              </a>
+                            </div>
+                          {% endif %}
+                        </div>
+                      </div>
+                    {% endif %}
+                    {% if block.settings.half_right_title != blank %}
+                      <div class="halfleft col">
+                        <div class="row">
+                            <div class="col -nav-subtitle-">
+                                <h3>{{ block.settings.half_right_title }}</h3>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                          {% if block.settings.hr_link_url1 %}
+                            <div class="col-lg-4 -nav-submenu-item-">
+                              <a href="{{ block.settings.hr_link_url1 }}">
+                                  <h4>{{ block.settings.hr_link_text1 }}</h4>
+                                  <p>{{ block.settings.hr_link_info1 }}</p>
+                              </a>
+                            </div>
+                          {% endif %}{% if block.settings.hr_link_url2 %}
+                            <div class="col-lg-4 -nav-submenu-item-">
+                              <a href="{{ block.settings.hr_link_url2 }}">
+                                  <h4>{{ block.settings.hr_link_text2 }}</h4>
+                                  <p>{{ block.settings.hr_link_info2 }}</p>
+                              </a>
+                            </div>
+                          {% endif %}{% if block.settings.hr_link_url3 %}
+                            <div class="col-lg-4 -nav-submenu-item-">
+                              <a href="{{ block.settings.hr_link_url3 }}">
+                                  <h4>{{ block.settings.hr_link_text3 }}</h4>
+                                  <p>{{ block.settings.hr_link_info3 }}</p>
+                              </a>
+                            </div>
+                          {% endif %}{% if block.settings.hr_link_url4 %}
+                            <div class="col-lg-4 -nav-submenu-item-">
+                              <a href="{{ block.settings.hr_link_url4 }}">
+                                  <h4>{{ block.settings.hr_link_text4 }}</h4>
+                                  <p>{{ block.settings.hr_link_info4 }}</p>
+                              </a>
+                            </div>
+                          {% endif %}{% if block.settings.hr_link_url5 %}
+                            <div class="col-lg-4 -nav-submenu-item-">
+                              <a href="{{ block.settings.hr_link_url5 }}">
+                                  <h4>{{ block.settings.hr_link_text5 }}</h4>
+                                  <p>{{ block.settings.hr_link_info5 }}</p>
+                              </a>
+                            </div>
+                          {% endif %}{% if block.settings.hr_link_url6 %}
+                            <div class="col-lg-4 -nav-submenu-item-">
+                              <a href="{{ block.settings.hr_link_url6 }}">
+                                  <h4>{{ block.settings.hr_link_text6 }}</h4>
+                                  <p>{{ block.settings.hr_link_info6 }}</p>
+                              </a>
+                            </div>
+                          {% endif %}
+                        </div>
+                      </div>
+                    {% endif %}
+                  </div>
+                </div>
+              </div>
+            {% endif %}
+          </li>
+
+          {%- when 'mega_menu_2' -%}
+            <li class="header__linklist-item last">
+              <a class="header__linklist-link link--animated {% if block.settings.show_mega_menu %}dropdown{% endif %}" href="{{ block.settings.menu_item_link }}">
+                {{ block.settings.menu_item_text }} 
+              </a>
+              {% if block.settings.show_mega_menu %}
+                <div class="dropdown__menu">
+                  <div class="container-full">
+                    <div class="row">
+                      {% assign column_1_menu = block.settings.column_1_menu.links %}
+                      {% assign column_2_menu = block.settings.column_2_menu.links %}
+                      {% assign column_3_menu = block.settings.column_3_menu.links %}
+
+                      {% if column_1_menu != blank %}
+                        <div class="list-Links col --list-Links-left-padding">
+                            <div class="row inventory-ctrl-lists">
+                                <div class="col-lg-12">
+                                    <h3>{{ block.settings.column_1_title }}</h3>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="col listLinks ctrl-lists css-columns">
+                                        <div class="row">
+                                          {% for link in column_1_menu %}
+                                            <div class="col-lg-{% if column_3_menu != blank %}12{% else %}6{% endif %}" style="flex:0 0 auto;">
+                                                <a href="{{ link.url }}" class="listLink">{{ link.title }}</a>
+                                            </div>
+                                          {% endfor %}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                      {% endif %}
+                      {% if column_2_menu != blank %}
+                        <div class="list-Links col --list-Links-left-padding">
+                            <div class="row inventory-ctrl-lists">
+                                <div class="col-lg-12">
+                                    <h3>{{ block.settings.column_2_title }}</h3>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="col listLinks ctrl-lists css-columns">
+                                        <div class="row">
+                                          {% for link in column_2_menu %}
+                                            <div class="col-lg-{% if column_3_menu != blank %}12{% else %}6{% endif %}" style="flex:0 0 auto;">
+                                                <a href="{{ link.url }}" class="listLink">{{ link.title }}</a>
+                                            </div>
+                                          {% endfor %}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                      {% endif %}
+                      {% if column_3_menu != blank %}
+                        <div class="list-Links col --list-Links-left-padding">
+                            <div class="row inventory-ctrl-lists">
+                                <div class="col-lg-12">
+                                    <h3>{{ block.settings.column_3_title }}</h3>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="col listLinks ctrl-lists css-columns">
+                                        <div class="row">
+                                          {% for link in column_3_menu %}
+                                            <div class="col-lg-{% if column_3_menu != blank %}12{% else %}6{% endif %}" style="flex:0 0 auto;">
+                                                <a href="{{ link.url }}" class="listLink">{{ link.title }}</a>
+                                            </div>
+                                          {% endfor %}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                      {% endif %}
+                    </div>
+
+                  </div>
+                </div>
+              {% endif %}
+            </li>
+          {%- when 'phone_selector' -%}
+            <li class="d-none d-lg-block phone-selector" role="button">
+
+              {%- render 'icon' with 'picto-phone' -%}
+              <span class="selected-phone"><p>+1 214-547-4100</p><span>Intl.</span></span>
+              <span class="--locale-selector-">
+                  <ul class="--locale-selector-dropdown">
+                    {% if block.settings.phone_number_1 %}
+                      <li><p class="main-phone-number">{{ block.settings.phone_number_1 }}</p><span>{{ block.settings.phone_label_1 }}</span></li>
+                    {% endif %}
+                    {% if block.settings.phone_number_2 %}
+                      <li><p>{{ block.settings.phone_number_2 }}</p><span>{{ block.settings.phone_label_2 }}</span></li>
+                    {% endif %}
+                    {% if block.settings.phone_number_3 %}
+                      <li><p>{{ block.settings.phone_number_3 }}</p><span>{{ block.settings.phone_label_3 }}</span></li>
+                    {% endif %}
+                  </ul>
+              </span>
+              <span class="chevron-down">{%- render 'icon' with 'chevron' -%}</span>
+            </li>
+        <script>
+          $(document).ready(function() {
+              // get the stored value from local storage, if it exists
+              var selectedPhone = localStorage.getItem('selectedPhone');
+              if (selectedPhone) {
+                  $('.selected-phone').html(selectedPhone);
+              }
+
+              // handle click events on the locale selector dropdown
+              $('.--locale-selector-dropdown li').click(function() {
+                  // get the phone number and label from the clicked element
+                  var phone = $(this).find('p').text();
+                  var label = $(this).find('span').text();
+
+                  // update the selected phone element and close the dropdown
+                  $('.selected-phone').html('<p>' + phone + '</p><span>' + label + '</span>');
+                  $('.--locale-selector-').removeClass('cus-active');
+                  $('.selected-phone').removeClass('cus-active');
+                  $('.selected-phone').attr('aria-expanded', false);
+
+                  // store the selected phone in local storage
+                  localStorage.setItem('selectedPhone', $('.selected-phone').html());
+              });
+          });
+        </script>
+      {%- endcase -%}
+    {%- endfor -%}
+  </ul>
+</desktop-navigation>
